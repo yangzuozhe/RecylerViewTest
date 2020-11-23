@@ -211,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
+            //这里是数据的大小
             return mList.size();
         }
     }
