@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.flexbox.FlexboxLayoutManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -100,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-        LinearLayoutManager manager = new LinearLayoutManager(this);
-        manager.setOrientation(RecyclerView.VERTICAL);
+        FlexboxLayoutManager manager = new FlexboxLayoutManager(this);
+//        manager.setOrientation(RecyclerView.VERTICAL);
         rvYang.setLayoutManager(manager);
         rvYang.setAdapter(adapter);
     }
