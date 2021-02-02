@@ -21,6 +21,11 @@ public class ItemTouchCallBack extends ItemTouchHelper.Callback {
     private static final String TAG = "drag";
     private OnItemMoveOrSwipedListener mOnItemMoveOrSwipedListener;
 
+    /**
+     * 将 OnItemMoveOrSwipedListener 这个接口传过来，这个接口被 我们自定义的 RecyclerVie 的 Adapter 给实现了，这是为了，在Adapter 中重写，这样子，Adapter 中传入的数据就会同步
+     *
+     * @param onItemMoveOrSwipedListener
+     */
     public void setOnItemMoveOrSwipedListener(OnItemMoveOrSwipedListener onItemMoveOrSwipedListener) {
         mOnItemMoveOrSwipedListener = onItemMoveOrSwipedListener;
     }

@@ -1,7 +1,7 @@
 package com.example.recylerviewtest.moveorswiped;
 
 /**
- * 类描述
+ * 用于连接 Adapter 和 ItemTouchCallBack 的接口，这接口被 Adapter 实现
  *
  * @author HB.yangzuozhe
  * @date 2021-02-02
