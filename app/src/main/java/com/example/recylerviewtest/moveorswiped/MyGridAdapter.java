@@ -56,7 +56,12 @@ public class MyGridAdapter extends RecyclerView.Adapter<MyGridAdapter.DataViewHo
         return mStringList.size();
     }
 
-
+    /**
+     * 拖动 item 时会做的事情
+     *
+     * @param fromPosition 开始的viewHolder 的position
+     * @param toPosition   结束的 viewHolder 的 position
+     */
     @Override
     public void onMove(int fromPosition, int toPosition) {
         Log.i("drag", "onMove");
@@ -64,6 +69,11 @@ public class MyGridAdapter extends RecyclerView.Adapter<MyGridAdapter.DataViewHo
         notifyItemMoved(fromPosition, toPosition);
     }
 
+    /**
+     * 滑动 item 时会做的事情
+     *
+     * @param position 当前滑动的 viewHolder 的 position
+     */
     @Override
     public void onSwiped(int position) {
         Log.i("drag", "onSwiped");
@@ -71,15 +81,28 @@ public class MyGridAdapter extends RecyclerView.Adapter<MyGridAdapter.DataViewHo
         notifyItemRemoved(position);
     }
 
+    /**
+     * 在调用 setAdapter 的时候调用这个方法
+     *
+     * @param recyclerView
+     */
     @Override
     public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
+        Log.i("Demo", "onAttachedToRecyclerView");
         mRecyclerView = recyclerView;
     }
 
+
+    /**
+     * 当 adpter 改变，旧的 adapter 回调 onDetachedFromRecyclerView，新的 adapter 回调 onAttachedToRecyclerView。
+     *
+     * @param recyclerView
+     */
     @Override
     public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
+        Log.i("Demo", "onDetachedFromRecyclerView");
         mRecyclerView = null;
     }
 }

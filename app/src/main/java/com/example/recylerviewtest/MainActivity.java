@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.recylerviewtest.moveorswiped.TouchRecyclerViewActivity;
 import com.google.android.flexbox.FlexboxLayoutManager;
 
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         rvYang = findViewById(R.id.rvYang);
         initAdapter();
+        Intent intent = new Intent(this, TouchRecyclerViewActivity.class);
+        startActivity(intent);
     }
 
     public void initAdapter() {
